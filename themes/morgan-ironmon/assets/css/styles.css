@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+/* @font-face{font-family:RifficFree;src:local("RifficFree"),url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap")} */
+@font-face{font-family:RifficFree;src:local("RifficFree"),url("../RifficFree-Bold.ttf")}
+
+* {
+  /* font-family: "Riffic Free"; */
+  font-family: 'Noto Sans', sans-serif;
+}
+.pokes {
+/* margin-top: 110px; */
+}
+
+.browser-connected {
+  display: block !important;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: "Source Sans Pro";
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of Meyer Reset CSS */
+
+img {
+	max-width: 100%; /*makes images scale with flexible grids*/
+	display: block; /*removes tiny space added in some browsers below images */
+}
+
+html {
+    font-size:12pt; /* Adjust for REM */
+	line-height: 1;
+}
+
+#wrapper {
+	width: 602px;
+	margin-left: 30px;
+}
+
+#header {
+	background-image: linear-gradient(to right, #66CCFF, #FFB5E9);
+
+	height: 82px;
+	color: #fff;
+	font-weight: 500;
+	font-size: 50pt;
+	-webkit-text-stroke-width: 1.5px;
+	-webkit-text-stroke-color: black;
+}
+
+/* h1 {
+	color: #fff;
+	font-weight: 500;
+	font-size: 50pt;
+	
+} */
+
+
+
+#nickname {
+	padding-left: 15px;
+	text-align: left;
+	float: left;
+	}
+
+#level {
+	padding-right: 15px;
+	color: #fff;
+	float: right;
+	text-align: right;	
+}
+
+#lvl_id {
+	font-size: 30pt;
+	font-weight: 700;
+	display: inline;
+}
+
+#info {
+	background-color: #4d4d4d;
+	clear: both;
+	padding: 15px 15px 10px 15px;
+	position: relative;
+}
+
+#pokemon-sprite {
+	width: 200px;
+	height:200px;
+	border: 2px solid rgb(255, 255, 255);
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+
+}
+
+#pokemon-sprite img {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	transform: scale(2);
+	transform-origin: bottom;
+	background-color: rgba(148, 248, 255, 0.274);
+}
+
+#info-text {
+	color:#FFB5E9;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 23pt;
+	font-weight: normal;
+	line-height: 35pt;
+	margin-top: -10px;
+	padding-left: 15px;
+}
+
+#eva-acc {
+	font-size: 15pt;
+	color: #66CCFF;
+	float: left;
+	bottom: 10px;
+	position: absolute;
+	/*   */
+	line-height: 20pt;
+}
+#eva-acc h2 {
+	font-size: 20pt;
+}
+
+h2 {
+	color: #fff;
+	font-weight: 500;
+	display: inline;
+}
+
+h3 {
+	color: #999;
+	font-size: 20pt;
+	line-height: normal;
+}
+
+table {
+	background-color: #333;
+	width: 100%;
+	height: auto;
+	clear: both;
+	text-align: center;	
+	line-height: normal;
+	table-layout: fixed;
+}
+
+thead th {
+	font-size: 15pt;
+	color: #66CCFF;
+	padding-top: 10px;
+	/* border: 1px solid white; */
+	
+}
+
+#stats td {
+	color:#fff;
+	font-weight: 500;
+	font-size: 23pt;
+	
+}
+
+#stat-changes td {
+	color:rgb(126, 126, 126);
+	font-weight: 500;
+	font-size: 20pt;
+	padding-bottom: 10px;
+}
+
+#HP-style {
+	border-top: 2px solid #999;
+}
+
+#iv-ev {
+	background-color: #333;
+	width: 100%;
+	clear: both;
+	text-align: center;	
+	line-height: normal;
+	table-layout: fixed;
+	font-size: 15pt;
+}
+
+#iv-ev th {
+	font-size: 15pt;
+	color: #66CCFF;
+	border-top: 1px solid #999;
+}
+
+#iv-ev td {
+	color: #999;
+	font-weight: 300;
+	padding: 10px;
+	border-top: 1px solid #999;
+}
+
+#moves {
+	color: white;
+	height: 72px;
+	background-color: #333;
+	display: flex;
+	justify-content: space-evenly;
+	align-content: space-between;
+	width: 100%;
+}
+
+.moves {
+	text-align: center;
+	background-color: #999;
+	height: 100%;
+	width: 24.5%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+	/* border-right: 1px solid white; */
+}
+
+#stats .hp__inner.low {
+  color: yellow;
+}
+
+#stats .hp__inner.critical {
+  color: red;
+}
+
+.move-name{
+	font-weight: 500;
+	line-height: 1.5;
+	margin-top: -10px;
+	font-size: 15pt;
+}
