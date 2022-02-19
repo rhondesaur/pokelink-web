@@ -1,18 +1,12 @@
 Vue.component( "PokemonSummary", {
   template: `
   <div style="display: none" :class="{ 'browser-connected' : true, 'darkMode': settings.theme.darkMode }" class="pokes">
-    <transition
-      name="custom-classes-transition"
-      enter-active-class="animated slideInUp"
-      leave-active-class="animated slideOutDown"
+    <Pokemon-Summary
+      v-if="summaryList.length"
+      :key="summaryList[0].pid"
+      :pokemon="summaryList[0]"
     >
-      <Pokemon-Summary
-        v-if="summaryList.length"
-        :key="summaryList[0].pid"
-        :pokemon="summaryList[0]"
-      >
-      </Pokemon-Summary>
-    </transition>
+    </Pokemon-Summary>
     <div class="no-connection" v-if="!connected">
       <p>Waiting for successful connection to Pokélink...</p>
       <p>Attempting to connect on port {{settings.port}}</p>
@@ -42,7 +36,6 @@ Vue.component( "PokemonSummary", {
         vm.connected = true;
         vm.players[username] = party
           .filter(slot => slot !== null && slot.pokemon !== null)
-          .filter(slot => slot.pokemon.is_active_in_battle === true)
           .map(function (pokemonWrapper) {
               return transformPokemon(pokemonWrapper.pokemon);
           });
