@@ -278,3 +278,13 @@ thead th {
 	margin-top: -10px;
 	font-size: 15pt;
 }
+
+.statDecrease {
+	/* font-weight: bold; */
+	color: red !important;
+}
+
+.statIncrease {
+	/* font-weight: bold; */
+	color: green !important;
+}

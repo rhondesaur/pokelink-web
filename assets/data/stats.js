@@ -1,5 +1,5 @@
 
-const stats = ['HP', 'Atk', 'Def', 'SpAtk', 'SpDef', 'Spd']
+const stats = statKeyNames = ['HP', 'Atk', 'Def', 'SpAtk', 'SpDef', 'Spd']
 const natureTable = defaultSettings.natures
 /**
  * @param  {Number} iv          Pokémon HP IV(Individual Values)

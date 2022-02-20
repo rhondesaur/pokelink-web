@@ -532,7 +532,7 @@ var defaultSettings = {
     'lax': { increase: 'def', decrease: 'spdef' },
     'timid': { increase: 'spd', decrease: 'atk' },
     'hasty': { increase: 'spd', decrease: 'def' },
-    'serious': { increase: 'speed', decrease: 'speed' },
+    'serious': { increase: 'spd', decrease: 'spd' },
     'jolly': { increase: 'spd', decrease: 'spatk' },
     'naive': { increase: 'spd', decrease: 'spdef' },
     'modest': { increase: 'spatk', decrease: 'atk' },

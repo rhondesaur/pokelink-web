@@ -16,7 +16,7 @@ Vue.component("Pokemon-Summary", {
           <TrimmedSprite v-if="pokemonExists" :key="ident" :pokemon="pokemon" @done="fixedSprite = true">
           </TrimmedSprite>
 
-          <div id="eva-acc">
+          <div id="eva-acc"  v-if="!settings.theme.hideStatChanges">
             <div id="eva">
               EVA <h2>+2</h2>
             </div>
@@ -37,25 +37,65 @@ Vue.component("Pokemon-Summary", {
         <thead>
           <tr>
             <th>BST</th>
-            <th>HP</th>
-            <th>ATK</th>
-            <th>DEF</th>
-            <th>SPATK</th>
-            <th>SPDEF</th>
-            <th>SPD</th>
+            <th
+              :class="{statIncrease: isIncreased('Hp'), statDecrease: isDecreased('Hp')}"
+            >
+              HP
+            </th>
+            <th
+              :class="{statIncrease: isIncreased('Atk'), statDecrease: isDecreased('Atk')}"
+            >
+              ATK
+            </th>
+            <th
+              :class="{statIncrease: isIncreased('Def'), statDecrease: isDecreased('Def')}"
+            >
+              DEF
+            </th>
+            <th
+              :class="{statIncrease: isIncreased('SpAtk'), statDecrease: isDecreased('SpAtk')}"
+            >
+              SPATK
+            </th>
+            <th
+              :class="{statIncrease: isIncreased('SpDef'), statDecrease: isDecreased('SpDef')}"
+            >
+              SPDEF
+            </th>
+            <th
+              :class="{statIncrease: isIncreased('Spd'), statDecrease: isDecreased('Spd')}"
+            >
+              SPD
+            </th>
           </tr>
         </thead>
         <tr id="stats">
           <td>{{baseStatsTotal}}</td>
           <td
-            :class="{ hp__inner: true, low: parseFloat(healthPercent) <= 50, critical: parseFloat(healthPercent) <= 15 }">
+            :class="{ hp__inner: true, low: parseFloat(healthPercent) <= 50, critical: parseFloat(healthPercent) <= 15}"
+          >
             {{pokemon.hp.current}}
           </td>
-          <td>{{ stats['Atk'] }}</td>
-          <td>{{ stats['Def'] }}</td>
-          <td>{{ stats['SpAtk'] }}</td>
-          <td>{{ stats['SpDef'] }}</td>
-          <td>{{ stats['Spd'] }}</td>
+          <td
+          >
+            {{ stats['Atk'] }}
+          </td>
+          <td
+          >
+            {{ stats['Def'] }}
+          </td>
+          <td
+          >
+            {{ stats['SpAtk'] }}
+          </td>
+          <td
+          >
+            {{ stats['SpDef'] }}
+          </td>
+          <td
+          >
+            {{ stats['Spd'] }}
+          </td>
         </tr>
         <tr id="stat-changes" v-if="!settings.theme.hideStatChanges">
           <td></td>
@@ -115,7 +155,24 @@ Vue.component("Pokemon-Summary", {
   created() {
     this.settings = window.settings;
   },
+  methods: {
+    isIncreased (statKey) {
+      if (this.natureDetails === null) return false
+      if (this.natureDetails.increase.toLowerCase() === statKey.toLowerCase()) return true
+      return false
+    },
+    isDecreased (statKey) {
+      if (this.natureDetails === null) return false
+      if (this.natureDetails.decrease.toLowerCase() === statKey.toLowerCase()) return true
+      return false
+    }
+  },
   computed: {
+    natureDetails () {
+      let natureDetails = this.settings.natures[this.pokemon.nature.toLowerCase()];
+      if (natureDetails.increase === natureDetails.decrease) return null;
+      return natureDetails;
+    },
     pokemonExists() {
       if (!this.pokemon || !this.pokemon.hasOwnProperty("hp")) return false;
       return true;
