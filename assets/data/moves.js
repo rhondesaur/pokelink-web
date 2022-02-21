@@ -1517,6 +1517,17 @@ var movedex = [
         "accuracy": 90,
         "category": "\u7269\u7406",
         "cname": "\u98de\u819d\u649e",
+        "ename": "Hi Jump Kick",
+        "id": 136,
+        "jname": "\u3068\u3073\u3072\u3056\u3052\u308a",
+        "power": 130,
+        "pp": 10,
+        "type": "Fighting"
+    },
+    {
+        "accuracy": 90,
+        "category": "\u7269\u7406",
+        "cname": "\u98de\u819d\u649e",
         "ename": "High Jump Kick",
         "id": 136,
         "jname": "\u3068\u3073\u3072\u3056\u3052\u308a",
